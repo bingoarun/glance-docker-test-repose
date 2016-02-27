@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- To configure Repose see: http://wiki.openrepose.org/display/REPOSE/Configuration -->
+<system-model xmlns="http://docs.openrepose.org/repose/system-model/v2.0">
+    <repose-cluster id="repose">
+        <nodes>
+            <node id="repose_packstack" hostname="localhost" http-port="19292"/>
+        </nodes>
+        <filters>
+            <filter name="rate-limiting"/>
+        </filters>
+        <services>
+        </services>
+        <destinations>
+            <endpoint id="packstack" protocol="http" hostname="10.0.0.37" root-path="/" port="9292" default="true"/>
+        </destinations>
+    </repose-cluster>
+ 
+ 
+    <!-- Please set the enabled attribute to true to send us usage updates and help us improve Repose! -->
+    <phone-home enabled="false"
+                origin-service-id="your-service"
+                contact-email="your@service.com"/>
+</system-model>
